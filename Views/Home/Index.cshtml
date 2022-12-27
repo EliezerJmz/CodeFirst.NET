@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--llamamos a los recursos de idiomas-->
+<!--Segun el idioma del navegador seleciona entre es String1 en español o el String1 en Ingles-->
+<h3>Idioma que se ha seleccionado según el idioma del navegador:</h3>
+<h3> @Recursos.Recurso.String1  </h3>
+
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Code First Mantenimiento Tabla BlogsPost</h2>
+        <p>
+            Mantenimineto a base de datos usando CodiFirst
+        </p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=IKlmroHxDNc&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=33">Ver Video</a></p>
+        @Html.ActionLink("BlogPost", "Index", "BlogPosts", null, new { @class = "btn btn-primary" })
+    </div>
+    <div class="col-md-4">
+        <h2>Code First Mantenimiento Tabla Personas</h2>
+        <p>
+            Mantenimineto a base de datos usando CodiFirst.
+            Delimitando campos de texto con Stringlength | Validando Modelos
+            Propiedades Obligatorias con Required:
+            Using System.ComponentModel.DataAnnotations;
+        </p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=a0bxekkEpYg&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=34">Ver Video</a></p>
+        <h3>
+            Validacines del lado del cliente:
+        </h3>
+        <p>
+            usando Remote.
+            <a href="https://www.youtube.com/watch?v=wo8H0fEIDrI&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=39">Video</a>
+        </p>
+        <h3>
+            Validacines personalizadas del lado del Servidor:
+        </h3>
+        <p>
+            Se realizan usando una clase para generar la validación y que hereda de ValidationAttributes de using System.ComponentModel.DataAnnotations;
+        </p>
+        <h3>
+            Validacines Complejas:
+        </h3>
+        <p>
+            Las debemos realizar dentro del modelo.
+        </p>
+        <h3>
+            Generador de No. de Tarjetas
+        </h3>
+        <p>
+            <a href="https://www.cotizacion.co/generador-de-tarjetas/">Generar Números de Tarjeta</a>
+        </p>
+        @Html.ActionLink("Persona", "Index", "Personas", null, new { @class = "btn btn-primary" })
+    </div>
+    <div class="col-md-4">
+        <h2>Cambiar idioma a mensaje de error</h2>
+        <p>
+            Mensaje de error segun Recurso cambia de idioma segun el navegador este en ingles o español
+            ErrorMessageResourceName = el nombre que idicamos en el Recurso
+            [Required(ErrorMessageResourceType = typeof(Recurso), ErrorMessageResourceName = "MensajeErrorRequired")]
+        </p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=FCiGfxcsQjw&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=46">Ver Video</a></p>
+        @Html.ActionLink("Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-primary" })
+    </div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>ScaffoldColumn</h2>
+        <p>
+            Ocultando campos en la Vista.
+            el modelo Persona contiene un CampoOculto, el cual no se mostrará.
+
+            [NotMapped] //evita que se cree el campo en la DB
+            [ScaffoldColumn(false)] // el CampoOculto no se crea en la vista
+            public String CampoOculto { get; set; }
+        </p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=E3gncZOp-A8&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=44">Ver Video</a></p>
+        @Html.ActionLink("Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-success" })
+    </div>
+    <div class="col-md-4">
+        <h2>DataType</h2>
+        <p>
+            Passwords y TextArea. Scaffolding DataType:
+            En el modelo Persona:
+        </p>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=wJt78-lC5AU&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=45 ">Ver Video</a></p>
+        @Html.ActionLink("Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-success" })
+    </div>
+    <div class="col-md-4">
+        <h2>Método OnModelCreating</h2>
+        <p>
+            Los usamos para cambiar un tipo de dato, por ejemplo vamos a cambiar el tipo de dato
+            al campo Nacimiento de tipo Datatime a Datatime2.
+            Estos cambios los vemos en la base de datos.
+        <p>
+            <a class="btn btn-default" href="https://www.youtube.com/watch?v=cT4WCRKuJXs&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=48">Ver Video</a>
+        </p>
+        @Html.ActionLink("Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-success" })
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Método OnModelCreating</h2>
+        <p>
+            Los usamos para cambiar un tipo de dato, por ejemplo vamos a cambiar el tipo de dato
+            al campo Nacimiento de tipo Datatime a Datatime2.
+            Estos cambios los vemos en la base de datos.
+        </p>
+        <p>
+            <a class="btn btn-default" href="https://www.youtube.com/watch?v=cT4WCRKuJXs&list=PL0kIvpOlieSNWR3YPSjh9P2p43SFnNBlB&index=48">Ver Video</a>
+        </p>
+        @Html.ActionLink("Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-warning" })
+    </div>
+
+    <div class="col-md-4">
+        <h2>CRUD Con CodeFirest</h2>
+        <p>
+            Usando un servicio PersonasListado para obtener los datos de la Db.
+            COMPARE:
+            Compare funciona pero en el editar lo bloque, por eso lo desactivamos hasta encontrar la solucion
+            [System.ComponentModel.DataAnnotations.Compare("Email", ErrorMessage ="El Email debe ser el mismo")]
+            Posibles soluciones:
+            <a href="https://www.iteramos.com/pregunta/28719/desactivar-el-atributo-de-validacion-obligatoria-en-determinadas-circunstancias" >Posibles soluciones</a>
+        </p>
+        <p>
+           <a class="btn btn-default" href="https://asp.mvc-tutorial.com/es/482/modelos/tipos-de-dataannotations-para-validacion-de-modelo/">Data Anotation</a>
+        </p>
+        @Html.ActionLink(" CRUD Modelo Persona", "Index", "Personas", null, new { @class = "btn btn-warning" })
+    </div>
+
+
+</div>
